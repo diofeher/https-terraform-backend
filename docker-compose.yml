@@ -37,6 +37,14 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./nginx-certs:/etc/ssl/private
 
 volumes:
   states:
